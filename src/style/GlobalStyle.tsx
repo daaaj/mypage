@@ -101,10 +101,6 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
-  html {
-    font-size: 10px;
-  }
-
   body {
     font-family: 'Pretendard-Regular';
     font-size: 1em;
