@@ -1,18 +1,17 @@
 import { useCallback } from 'react';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
-import { isDarkState } from 'store/atoms';
+import { isDarkAtom } from 'store/atoms';
 
 type DarkModeType = {
   isDark: boolean;
 };
 
 export default function DarkModeToggle() {
-  const [isDark, setIsDark] = useRecoilState(isDarkState);
+  const [isDark, setIsDark] = useRecoilState(isDarkAtom);
 
   const darkModeClickHandler = useCallback(() => {
     setIsDark((prev) => {
-      localStorage.setItem('darkMode', `${!prev}`);
       return !prev;
     });
   }, [setIsDark]);
@@ -37,17 +36,16 @@ const ToggleDiv = styled.div<DarkModeType>`
   height: 1.875rem;
   border-radius: 1.875rem;
   background-color: ${(props) => (props.isDark ? props.theme.color100 : 'black')};
-  transition: ${(props) => props.isDark && '0.5s'};
+  transition: 0.5s;
 `;
 
 const ToggleCircle = styled.div<DarkModeType>`
   position: absolute;
-  top: 2px;
-  left: ${(props) => (props.isDark ? '22px' : '3px')};
-
+  top: 0.125rem;
+  left: ${({ isDark }) => (isDark ? '1.4375rem' : '0.1875rem')};
   width: 1.5625rem;
   height: 1.5625rem;
   border-radius: 50%;
   background-color: #ffffff;
-  transition: ${(props) => (props.isDark ? '0.5s' : '0.5s')};
+  transition: 0.5s;
 `;
