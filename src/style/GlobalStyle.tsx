@@ -95,6 +95,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    -o-user-select: none;
     user-select: none;
 
     /* IOS 웹킷에서 터치 시에 등장하는 하이라이트를 제거하기 위함 */
