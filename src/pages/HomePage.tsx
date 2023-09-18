@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import SkillsArea from 'components/skills/SkillsArea';
 import ProfileArea from 'components/profile/ProfileArea';
 import ProjectArea from 'components/project/ProjectArea';
 
@@ -7,6 +8,7 @@ export default function HomePage() {
     <>
       <HomePageWarpper>
         <ProfileArea />
+        <SkillsArea />
         <ProjectArea />
       </HomePageWarpper>
     </>
