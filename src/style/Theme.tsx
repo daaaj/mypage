@@ -1,11 +1,12 @@
 import { css } from 'styled-components';
 
-const Color = {
-  color100: '#ffff52',
-  color200: '#bae97c',
-  color300: '#c5ffad',
+const FontSize = {
+  title: '44px',
+  xLarge: '38px',
+  large: '24px',
+  medium: '22px',
+  small: '14px',
 };
-
 const FlexCol = css`
   display: flex;
   flex-direction: column;
@@ -33,8 +34,35 @@ const MaxWidth = css`
 `;
 
 const HeaderHeight = css`
-  height: calc(100vh - 100px);
   padding-top: 100px;
 `;
 
-export const Theme = { Color, FlexCol, FlexRow, FlexCenter, FlexBetween, MaxWidth, HeaderHeight };
+const HeadShadow = css`
+  box-shadow: 0rem 2px 5px 0.125rem #8585857a;
+`;
+
+const cssList = { FontSize, FlexCol, FlexRow, FlexCenter, FlexBetween, MaxWidth, HeaderHeight, HeadShadow };
+
+export const Theme = {
+  ...cssList,
+  color100: '#27008286',
+  color200: '#a740e79b',
+  color300: '#da61a7a7',
+  bgColor: '#ffffff',
+  bgSkill: '#21016d',
+  bgModal: '#ffffff',
+  textColor: '#000000',
+  textHover: '#df4ea2',
+};
+
+export const DarkTheme = {
+  ...cssList,
+  color100: '#270082',
+  color200: '#7A0BC0',
+  color300: '#FA58B6',
+  bgColor: '#000000',
+  bgSkill: '#21016d',
+  bgModal: '#000000',
+  textColor: '#ffffff',
+  textHover: '#FA58B6',
+};

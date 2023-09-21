@@ -2,9 +2,11 @@ import { useCallback } from 'react';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
 import { isDarkAtom } from 'store/atoms';
+import { TbMoonFilled } from 'react-icons/tb';
+import { RiSunFill } from 'react-icons/ri';
 
 type DarkModeType = {
-  isDark: boolean;
+  darkstate: string;
 };
 
 export default function DarkModeToggle() {
@@ -12,6 +14,7 @@ export default function DarkModeToggle() {
 
   const darkModeClickHandler = useCallback(() => {
     setIsDark((prev) => {
+      localStorage.setItem('darkMode', `${!prev}`);
       return !prev;
     });
   }, [setIsDark]);
@@ -19,8 +22,10 @@ export default function DarkModeToggle() {
   return (
     <>
       <ToggleContainer onClick={darkModeClickHandler}>
-        <ToggleDiv isDark={isDark} />
-        <ToggleCircle isDark={isDark} />
+        <SunIcon />
+        <MoonIcon />
+        <ToggleDiv darkstate={isDark.toString()} />
+        <ToggleCircle darkstate={isDark.toString()} />
       </ToggleContainer>
     </>
   );
@@ -32,20 +37,36 @@ const ToggleContainer = styled.div`
 `;
 
 const ToggleDiv = styled.div<DarkModeType>`
-  width: 3.125rem;
+  width: 3.4375rem;
   height: 1.875rem;
   border-radius: 1.875rem;
-  background-color: ${(props) => (props.isDark ? props.theme.color100 : 'black')};
+  background-color: ${(props) => (props.darkstate === 'true' ? props.theme.color100 : 'black')};
   transition: 0.5s;
 `;
 
 const ToggleCircle = styled.div<DarkModeType>`
   position: absolute;
-  top: 0.125rem;
-  left: ${({ isDark }) => (isDark ? '1.4375rem' : '0.1875rem')};
-  width: 1.5625rem;
-  height: 1.5625rem;
+  top: 5px;
+  left: ${(props) => (props.darkstate === 'true' ? '1.875rem' : '0.3125rem')};
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
   background-color: #ffffff;
   transition: 0.5s;
+`;
+
+const SunIcon = styled(RiSunFill)`
+  position: absolute;
+  top: 0.25rem;
+  left: 0.2813rem;
+  width: 1.25rem;
+  color: #ffffff;
+`;
+
+const MoonIcon = styled(TbMoonFilled)`
+  position: absolute;
+  top: 0.25rem;
+  right: 0.1875rem;
+  width: 1.25rem;
+  color: #ffffff;
 `;

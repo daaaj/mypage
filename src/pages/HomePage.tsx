@@ -18,5 +18,5 @@ export default function HomePage() {
 const HomePageWarpper = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.bgColor};
-  color: ${({ theme }) => theme.fontColor};
+  color: ${({ theme }) => theme.textColor};
 `;

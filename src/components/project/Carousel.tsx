@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 import { useEffect, useRef, useState } from 'react';
+import { ImgType, ImgListType } from 'type/Type';
 import { BsArrowLeftCircle } from 'react-icons/bs';
 import { BsArrowRightCircle } from 'react-icons/bs';
 
-type ImgType = {
-  img: string;
+type CrouselType = {
+  imgList: ImgListType;
+  alt: string;
 };
-type ImgListType = ImgType[];
 
-export default function Carousel({ ...props }) {
+export default function Carousel({ ...props }: CrouselType) {
   const [imgIndex, setImgIndex] = useState(1);
   const [carouselTransition, setCarouselTransition] = useState('transform 500ms ease-in-out');
   const slideRef = useRef<HTMLDivElement>(null);
@@ -50,7 +51,7 @@ export default function Carousel({ ...props }) {
   };
 
   useEffect(() => {
-    const imgWidth: number = 720;
+    const imgWidth: number = 1240;
     const slideRange = imgIndex * imgWidth;
 
     if (slideRef.current != null) {
@@ -73,7 +74,7 @@ export default function Carousel({ ...props }) {
     <>
       <CarouselWrapper>
         <div onClick={prevClickHandler}>
-          <BsArrowLeftCircle size={30} />
+          <PrevIcon size={30} />
         </div>
         <ImgWrapper>
           <ImgBox ref={slideRef}>
@@ -83,7 +84,7 @@ export default function Carousel({ ...props }) {
           </ImgBox>
         </ImgWrapper>
         <div onClick={nextClickHandler}>
-          <BsArrowRightCircle size={30} />
+          <NextIcon size={30} />
         </div>
       </CarouselWrapper>
     </>
@@ -99,8 +100,8 @@ const CarouselWrapper = styled.section`
 
 const ImgWrapper = styled.div`
   ${(props) => props.theme.FlexRow};
-  width: 45rem;
-  height: 31.25rem;
+  width: 77.5rem;
+  height: 43.75rem;
   overflow: hidden;
 `;
 
@@ -112,10 +113,18 @@ const ImgBox = styled.div`
   height: 100%;
 
   img {
-    min-width: 42.5rem;
-    height: 28.125rem;
+    min-width: 75rem;
+    height: 37.5rem;
     margin: 0 0.9375rem;
     border-radius: 1.25rem;
     border: 0.3125rem solid #000000;
   }
+`;
+
+const PrevIcon = styled(BsArrowLeftCircle)`
+  cursor: pointer;
+`;
+
+const NextIcon = styled(BsArrowRightCircle)`
+  cursor: pointer;
 `;

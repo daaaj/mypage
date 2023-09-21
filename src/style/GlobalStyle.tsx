@@ -90,7 +90,6 @@ export const GlobalStyle = createGlobalStyle`
       font-style: normal;
     }
 
-
     /* 드래그나 더블클릭 시에 텍스트가 선택이 되지 않도록 설정 */
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -100,8 +99,8 @@ export const GlobalStyle = createGlobalStyle`
 
     /* IOS 웹킷에서 터치 시에 등장하는 하이라이트를 제거하기 위함 */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-
+   }
+  
   body {
     font-family: 'Pretendard-Regular';
     font-size: 1em;
@@ -109,7 +108,8 @@ export const GlobalStyle = createGlobalStyle`
     height: 100vh;
     user-select: none; 
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+   
   }
   ::-webkit-scrollbar {
     width: 5px;
@@ -119,7 +119,7 @@ export const GlobalStyle = createGlobalStyle`
     background-clip: padding-box;
     border: 0 solid transparent;
     border-radius: 10px;
-    background-color: #00000011;
+    background-color: #7e7e7e84;
   }
   ::-webkit-scrollbar-track {
     background-color: transparent;
