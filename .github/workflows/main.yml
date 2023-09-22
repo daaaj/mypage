@@ -33,7 +33,7 @@ jobs:
           CI: ""  
         
       - name: Deploy to S3
-      - uses: awact/s3-action@master
+        uses: awact/s3-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
