@@ -26,14 +26,12 @@ jobs:
 
       - name: Build 
         run: yarn build
-
-      - uses: awact/s3-action@master
-        with:
-          args: --acl public-read --follow-symlinks --delete
+        
+      - name: s3 build
+        run: aws s3 sync build/ s3://${{ secrets.AWS_S3_BUCKET }} --acl public-read
         env:
-          SOURCE_DIR: './build'
-          AWS_REGION: 'ap-northeast-2'
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          
+   
   
