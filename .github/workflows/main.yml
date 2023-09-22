@@ -33,12 +33,13 @@ jobs:
           CI: ""  
         
       - name: Deploy to S3
-        run: |
-          aws s3 cp \
-            --recursive \
-            --region ap-northeast-2 \
-            build s3://portfolio-jeong
+      - uses: awact/s3-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
         env:
+          SOURCE_DIR: './build'
+          AWS_REGION: 'ap-northeast-2'
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           
