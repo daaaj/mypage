@@ -1,9 +1,10 @@
-# main-deploy-work.yml
+# main.yml
 name: main
 
 on:
   push:
-    branches: [main]  
+    branches: 
+      - main  
 
 jobs:
   build:
@@ -26,8 +27,10 @@ jobs:
 
       - name: Build 
         run: yarn build
+        env:
+          CI: ""  
         
-      - name: s3 build
+      - name: Deploy to S3
         run: aws s3 sync build/ s3://${{ secrets.AWS_S3_BUCKET }} --acl public-read
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
