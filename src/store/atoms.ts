@@ -7,8 +7,13 @@ const { persistAtom: darkPersist } = recoilPersist({
   storage: localStorage,
 });
 
-export const isDarkState = atom<boolean>({
+export const isDarkAtom = atom<boolean>({
+  key: `darkMode`,
+  default: localStorage.getItem(`darkMode`) === 'true' ? true : false,
+  effects_UNSTABLE: [darkPersist],
+});
+
+export const isShowTopBtniAtom = atom<boolean>({
   key: `state${v4()}`,
   default: false,
-  effects_UNSTABLE: [darkPersist],
 });

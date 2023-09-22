@@ -14,7 +14,7 @@ import { ReactComponent as ReactQuery } from 'assets/skills/react-query.svg';
 export default function SkillsArea() {
   return (
     <>
-      <SkillsWrapper>
+      <SkillsWrapper id="skills">
         <SkillsContainer>
           <h2>SKILLS</h2>
           <SkillsBoxWrapper>

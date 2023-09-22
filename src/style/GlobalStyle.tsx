@@ -112,7 +112,7 @@ export const GlobalStyle = createGlobalStyle`
    
   }
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 10px;
     height: 8px;
   }
   ::-webkit-scrollbar-thumb {
