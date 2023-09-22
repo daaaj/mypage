@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import Header from './Header';
 import { Outlet } from 'react-router-dom';
+import Header from './Header';
+import TopButton from 'components/TopButton';
 
 export default function Layout() {
   return (
@@ -9,6 +10,7 @@ export default function Layout() {
       <LayoutWrapper>
         <Outlet />
       </LayoutWrapper>
+      <TopButton />
     </>
   );
 }

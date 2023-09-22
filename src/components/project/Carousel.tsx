@@ -117,7 +117,7 @@ const ImgBox = styled.div`
     height: 37.5rem;
     margin: 0 0.9375rem;
     border-radius: 1.25rem;
-    border: 0.3125rem solid #000000;
+    border: 0.3125rem solid ${({ theme }) => theme.textColor};
   }
 `;
 
