@@ -21,7 +21,13 @@ jobs:
             key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
             restore-keys: |
                 ${{ runner.os }}-node-
-
+     
+      - name: Generate Environment Variables File for Production
+        run: |
+          echo "GENERATE_SOURCEMAP=$GENERATE_SOURCEMAP" >> .env.production
+        env:
+          GENERATE_SOURCEMAP: ${{ secrets.GENERATE_SOURCEMAP }}
+        
       - name: Install Dependencies
         run: yarn
 
