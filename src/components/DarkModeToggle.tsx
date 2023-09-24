@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
 import { isDarkAtom } from 'store/atoms';
-import { TbMoonFilled } from 'react-icons/tb';
 import { RiSunFill } from 'react-icons/ri';
+import { TbMoonFilled } from 'react-icons/tb';
 
 type DarkModeType = {
   darkstate: string;
@@ -46,7 +46,7 @@ const ToggleDiv = styled.div<DarkModeType>`
 
 const ToggleCircle = styled.div<DarkModeType>`
   position: absolute;
-  top: 5px;
+  top: 0.3125rem;
   left: ${(props) => (props.darkstate === 'true' ? '1.875rem' : '0.3125rem')};
   width: 1.25rem;
   height: 1.25rem;
@@ -57,7 +57,7 @@ const ToggleCircle = styled.div<DarkModeType>`
 
 const SunIcon = styled(RiSunFill)`
   position: absolute;
-  top: 0.25rem;
+  top: 0.3125rem;
   left: 0.2813rem;
   width: 1.25rem;
   color: #ffffff;
@@ -65,7 +65,7 @@ const SunIcon = styled(RiSunFill)`
 
 const MoonIcon = styled(TbMoonFilled)`
   position: absolute;
-  top: 0.25rem;
+  top: 0.3125rem;
   right: 0.1875rem;
   width: 1.25rem;
   color: #ffffff;

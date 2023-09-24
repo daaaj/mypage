@@ -1,12 +1,16 @@
 import { css } from 'styled-components';
+import { media } from './Media';
 
 const FontSize = {
+  frontText: '90px',
   title: '44px',
   xLarge: '38px',
   large: '24px',
   medium: '22px',
+  normal: '20px',
   small: '14px',
 };
+
 const FlexCol = css`
   display: flex;
   flex-direction: column;
@@ -30,11 +34,11 @@ const FlexBetween = css`
 const MaxWidth = css`
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 40px;
 `;
 
 const HeaderHeight = css`
-  padding-top: 100px;
+  padding-top: 80px;
 `;
 
 const HeadShadow = css`
@@ -44,6 +48,7 @@ const HeadShadow = css`
 const cssList = { FontSize, FlexCol, FlexRow, FlexCenter, FlexBetween, MaxWidth, HeaderHeight, HeadShadow };
 
 export const Theme = {
+  media,
   ...cssList,
   color100: '#27008286',
   color200: '#a740e79b',
@@ -56,6 +61,7 @@ export const Theme = {
 };
 
 export const DarkTheme = {
+  media,
   ...cssList,
   color100: '#270082',
   color200: '#7A0BC0',

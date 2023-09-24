@@ -31,8 +31,8 @@ const HeaderWrapper = styled.header`
   top: 0;
   z-index: 10;
   width: 100%;
-  height: 6.25rem;
-  font-size: 1.375rem;
+  height: 80px;
+  font-size: ${({ theme }) => theme.FontSize.normal};
   background-color: #ffffff;
   opacity: 0.9;
   ${({ theme }) => theme.HeadShadow};
@@ -51,6 +51,7 @@ const HeaderContainer = styled.nav`
 
 const NavListBox = styled.ul`
   ${({ theme }) => theme.FlexRow};
+  align-items: center;
   gap: 1.875rem;
 
   > li {

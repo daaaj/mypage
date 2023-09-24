@@ -21,7 +21,7 @@ export default function DetailPortfolio() {
               <td>
                 <TableTitle>프로젝트 기간</TableTitle>
               </td>
-              <td>2023.09.</td>
+              <td>`23.09.</td>
             </tr>
             <tr>
               <td>

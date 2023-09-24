@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
 import { useEffect, useRef, useState } from 'react';
+import { sizes } from 'style/Media';
 import { ImgType, ImgListType } from 'type/Type';
 import { BsArrowLeftCircle } from 'react-icons/bs';
 import { BsArrowRightCircle } from 'react-icons/bs';
@@ -11,8 +13,22 @@ type CrouselType = {
 
 export default function Carousel({ ...props }: CrouselType) {
   const [imgIndex, setImgIndex] = useState(1);
+  const [imgWidth, setImgWidth] = useState(1200);
+  const [imgHeight, setimgHeight] = useState(600);
   const [carouselTransition, setCarouselTransition] = useState('transform 500ms ease-in-out');
   const slideRef = useRef<HTMLDivElement>(null);
+
+  const maxWidth = useMediaQuery({ maxWidth: sizes.laptop });
+
+  useEffect(() => {
+    if (maxWidth) {
+      setImgWidth(800);
+      setimgHeight(500);
+    } else {
+      setImgWidth(1200);
+      setimgHeight(600);
+    }
+  }, [maxWidth]);
 
   const makeNewImgList = (arr: ImgListType) => {
     const dataStart = arr[0];
@@ -51,8 +67,7 @@ export default function Carousel({ ...props }: CrouselType) {
   };
 
   useEffect(() => {
-    const imgWidth: number = 1240;
-    const slideRange = imgIndex * imgWidth;
+    const slideRange = imgIndex * (imgWidth + 40);
 
     if (slideRef.current != null) {
       slideRef.current.style.transition = `${carouselTransition}`;
@@ -76,8 +91,8 @@ export default function Carousel({ ...props }: CrouselType) {
         <div onClick={prevClickHandler}>
           <PrevIcon size={30} />
         </div>
-        <ImgWrapper>
-          <ImgBox ref={slideRef}>
+        <ImgWrapper imgwidth={imgWidth} imgheight={imgHeight}>
+          <ImgBox ref={slideRef} imgwidth={imgWidth} imgheight={imgHeight}>
             {imgArr.map((data: ImgType, index: number) => (
               <img src={data.img} alt={props.alt} key={index} />
             ))}
@@ -98,14 +113,14 @@ const CarouselWrapper = styled.section`
   position: relative;
 `;
 
-const ImgWrapper = styled.div`
+const ImgWrapper = styled.div<{ imgwidth: number; imgheight: number }>`
   ${(props) => props.theme.FlexRow};
-  width: 77.5rem;
-  height: 43.75rem;
+  width: ${(props) => props.imgwidth + 40 + 'px'};
+  height: ${(props) => props.imgheight + 100 + 'px'};
   overflow: hidden;
 `;
 
-const ImgBox = styled.div`
+const ImgBox = styled.div<{ imgwidth: number; imgheight: number }>`
   ${({ theme }) => theme.FlexRow};
   justify-content: flex-start;
   align-items: center;
@@ -113,8 +128,8 @@ const ImgBox = styled.div`
   height: 100%;
 
   img {
-    min-width: 75rem;
-    height: 37.5rem;
+    min-width: ${(props) => props.imgwidth + 'px'};
+    height: ${(props) => props.imgheight + 'px'};
     margin: 0 0.9375rem;
     border-radius: 1.25rem;
     border: 0.3125rem solid ${({ theme }) => theme.textColor};

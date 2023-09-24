@@ -48,19 +48,23 @@ export default function ProjectDaydei() {
   );
 }
 
-const ProjectDaydeiWrapper = styled.section`
+export const ProjectDaydeiWrapper = styled.section`
   ${({ theme }) => theme.FlexCol};
   padding-top: 9.375rem;
 `;
 
-const DescriptionContainer = styled.div`
+export const DescriptionContainer = styled.div`
   ${({ theme }) => theme.FlexCol};
   gap: 1.25rem;
   margin-bottom: 0.625rem;
   font-size: ${({ theme }) => theme.FontSize.large};
+
+  ${({ theme }) => theme.media.laptop`
+      font-size: 22px;
+  `}
 `;
 
-const TitleBox = styled.div`
+export const TitleBox = styled.div`
   display: flex;
   align-items: center;
 
@@ -73,10 +77,14 @@ const TitleBox = styled.div`
     > span {
       width: auto;
       font-size: ${({ theme }) => theme.FontSize.title};
+
+      ${({ theme }) => theme.media.laptop`
+          font-size: 38px;
+      `}
     }
   }
 `;
 
-const LinkIcon = styled(HiOutlineLink)`
+export const LinkIcon = styled(HiOutlineLink)`
   margin-right: 0.875rem;
 `;

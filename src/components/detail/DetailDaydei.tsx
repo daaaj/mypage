@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import DaydeiColor from 'assets/project/daydei/daydei-color.png';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import DaydeiColor from "assets/project/daydei/daydei-color.png";
 
 export default function DetailDaydei() {
   return (
@@ -21,7 +21,7 @@ export default function DetailDaydei() {
               <td>
                 <TableTitle>프로젝트 기간</TableTitle>
               </td>
-              <td>23.03.10 ~ 23.04.21 (6주)</td>
+              <td>`23.03.10 ~ `23.04.21 (6주)</td>
             </tr>
             <tr>
               <td>
@@ -99,12 +99,26 @@ export default function DetailDaydei() {
         </DaydeiTableBox>
         <DaydeiDescBox>
           <DescBox>
-            <h4></h4>
-            <p></p>
+            <h4>소통의 중요성</h4>
+            <p>
+              부트캠프 최종 프로젝트 진행 시 주어진 기간은 6주였지만, 실제 개발할 수 있는 기간은 4주였습니다. 이로 인해 초기에 프로젝트 기획을
+              신속하게 마치고 각자 파트를 분담하여 개발을 시작하였습니다. 개발 중 자신의 파트에서 발생하는 이슈나 변경 사항이 발생하면 1:1로 대화를
+              통해 해결하고 있었는데, 이로 인해 팀원 간의 정보 공유가 원할히 되지 않아 중간중간에 작업 내용을 계속 확인해야 하는 상황이 발생했습니다.
+              <br />
+              이에 따라, 팀 내에서 정보 공유가 되지 않는 문제를 해결하기 위해 매일 오전에 팀 전체 회의를 진행하고, 각 맡은 파트 진행 사항 및 변경
+              사항을 공유하였습니다. 이렇게 매일 회의를 통해 프로젝트의 진행도를 파악할 수 있었고, 좀 더 수월하게 진행할 수가 있었습니다.
+            </p>
           </DescBox>
           <DescBox>
-            <h4></h4>
-            <p></p>
+            <h4>기획부터 배포까지의 경험</h4>
+            <p>
+              UT 피드백 중 소스 코드가 노출되지 않아야 한다는 내용이 있었는데, 이전까지는 이러한 보안 측면을 고려하지 못한 채 개발을 진행하고
+              있었습니다. 이전까지는 프로젝트를 완성하는 데에 초점을 두고 있었지만, 피드백을 통해 보안 및 UX적 관점 등을 고려하는 것도 중요하다는 것을
+              깨달았습니다.
+              <br />
+              기획부터 배포 후 UT까지 진행해본 경험을 통해 앞으로는 개발을 더 심층적으로 고민하고, 완성도 높은 어플리케이션을 제공하기 위해서는 수많은
+              고민과 노력이 필요하다는 것을 배웠습니다.
+            </p>
           </DescBox>
         </DaydeiDescBox>
       </DaydeiDescWrapper>

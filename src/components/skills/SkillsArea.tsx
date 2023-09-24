@@ -56,7 +56,7 @@ export default function SkillsArea() {
 }
 
 const SkillsWrapper = styled.section`
-  padding: 8.75rem;
+  padding: 8.75rem 0;
   background-color: ${({ theme }) => theme.bgSkill};
 `;
 
@@ -68,11 +68,21 @@ const SkillsContainer = styled.div`
   > h2 {
     color: #ffffff;
     font-size: ${({ theme }) => theme.FontSize.title};
+
+    ${({ theme }) => theme.media.laptop`
+        font-size: 38px;
+    `}
   }
 `;
 
 const SkillsBoxWrapper = styled.div`
   display: grid;
   gap: 3.125rem;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  place-items: center;
+
+  ${({ theme }) => theme.media.laptop`
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+  `}
 `;
