@@ -9,7 +9,7 @@ export default function RouteChangeTracker() {
 
   useEffect(() => {
     if (!window.location.href.includes('locallhost')) {
-      ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID, { debug: true });
+      ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID as string, { debug: true });
     }
     setInit(true);
   }, []);
