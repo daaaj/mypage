@@ -33,7 +33,7 @@ export default function Carousel({ ...props }: CrouselType) {
 
     if (!desktop && !laptop) {
       setImgWidth(1200);
-      setimgHeight(600);
+      setimgHeight(650);
     }
   }, [desktop, laptop]);
 

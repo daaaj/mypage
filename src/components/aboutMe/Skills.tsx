@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SkillBox from '../aboutMe/SkillBox';
+import SkillBox from './SkillBox';
 import Redux from 'assets/skills/redux.png';
 import Github from 'assets/skills/github.png';
 import Recoil from 'assets/skills/recoil.png';
@@ -11,10 +11,10 @@ import { ReactComponent as JavaScript } from 'assets/skills/javascript.svg';
 import { ReactComponent as TypeScript } from 'assets/skills/typescript.svg';
 import { ReactComponent as ReactQuery } from 'assets/skills/react-query.svg';
 
-export default function SkillsArea() {
+export default function Skills() {
   return (
     <>
-      <SkillsWrapper id="skills">
+      <SkillsWrapper>
         <SkillsContainer>
           <h2>SKILLS</h2>
           <SkillsBoxWrapper>
@@ -56,12 +56,11 @@ export default function SkillsArea() {
 }
 
 const SkillsWrapper = styled.section`
-  padding: 8.75rem 0;
+  padding: 140px 0;
   background-color: ${({ theme }) => theme.bgSkill};
 `;
 
 const SkillsContainer = styled.div`
-  ${({ theme }) => theme.MaxWidth};
   ${({ theme }) => theme.FlexCol};
   gap: 3.125rem;
 

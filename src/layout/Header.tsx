@@ -29,7 +29,7 @@ export default function Header() {
             <>
               <h2 onClick={() => navigate('/')}>JEONG.</h2>
               <NavListBox>
-                <li onClick={() => onScrollToElement('profile')}>PROFILE</li>
+                <li onClick={() => onScrollToElement('aboutme')}>ABOUT ME</li>
                 <li onClick={() => onScrollToElement('skills')}>SKILLS</li>
                 <li onClick={() => onScrollToElement('project')}>PROJECT</li>
                 <li>

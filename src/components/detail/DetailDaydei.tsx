@@ -219,7 +219,9 @@ export const TableBox = styled.div`
 
   > ul {
     padding: 0;
-    line-height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
   }
 `;
 
