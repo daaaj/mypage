@@ -8,7 +8,7 @@ import { Theme, DarkTheme } from './style/Theme';
 import { GlobalStyle } from './style/GlobalStyle';
 import RouteChangeTracker from 'router/RouteChangeTracker';
 
-const TRACKING_ID = process.env.REACT_APP_GA_TRACKING_ID;
+const TRACKING_ID = process.env.REACT_APP_GA_TRACKING_ID as string;
 ReactGA.initialize(TRACKING_ID, { debug: true });
 ReactGA.pageview(window.location.pathname);
 
