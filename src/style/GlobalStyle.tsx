@@ -103,7 +103,6 @@ export const GlobalStyle = createGlobalStyle`
   
   body {
     font-family: 'Pretendard-Regular';
-    font-size: 1em;
     width : 100vw;
     height: 100vh;
     user-select: none; 

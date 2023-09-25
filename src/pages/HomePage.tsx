@@ -1,17 +1,14 @@
 import styled from 'styled-components';
-import useScrollTop from 'hooks/useScrollTop';
-import SkillsArea from 'components/skills/SkillsArea';
-import ProfileArea from 'components/profile/ProfileArea';
+import HomeArea from 'components/home/HomeArea';
 import ProjectArea from 'components/project/ProjectArea';
+import AboutMeArea from 'components/aboutMe/AboutMeArea';
 
 export default function HomePage() {
-  useScrollTop();
-
   return (
     <>
       <HomePageWarpper>
-        <ProfileArea />
-        <SkillsArea />
+        <HomeArea />
+        <AboutMeArea />
         <ProjectArea />
       </HomePageWarpper>
     </>

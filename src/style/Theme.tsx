@@ -1,12 +1,16 @@
 import { css } from 'styled-components';
+import { media } from './Media';
 
 const FontSize = {
+  frontText: '90px',
   title: '44px',
   xLarge: '38px',
   large: '24px',
   medium: '22px',
+  normal: '20px',
   small: '14px',
 };
+
 const FlexCol = css`
   display: flex;
   flex-direction: column;
@@ -28,22 +32,36 @@ const FlexBetween = css`
 `;
 
 const MaxWidth = css`
-  max-width: 1440px;
+  max-width: 90rem;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 2.5rem;
 `;
 
 const HeaderHeight = css`
-  padding-top: 100px;
+  padding-top: 5rem;
 `;
 
 const HeadShadow = css`
-  box-shadow: 0rem 2px 5px 0.125rem #8585857a;
+  box-shadow: 0rem 0.125rem 0.3125rem 0.125rem #8585857a;
 `;
 
-const cssList = { FontSize, FlexCol, FlexRow, FlexCenter, FlexBetween, MaxWidth, HeaderHeight, HeadShadow };
+const BackgroundStyle = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+`;
+
+const cssList = { FontSize, FlexCol, FlexRow, FlexCenter, FlexBetween, MaxWidth, HeaderHeight, HeadShadow, BackgroundStyle };
 
 export const Theme = {
+  media,
   ...cssList,
   color100: '#27008286',
   color200: '#a740e79b',
@@ -56,6 +74,7 @@ export const Theme = {
 };
 
 export const DarkTheme = {
+  media,
   ...cssList,
   color100: '#270082',
   color200: '#7A0BC0',

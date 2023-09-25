@@ -5,31 +5,19 @@ export default function CircleMotion() {
   return (
     <>
       <FirstCircle
-        initial={{ y: 100 }}
-        animate={{ y: 0 }}
-        transition={{
-          duration: 1.3,
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
+        initial={{ x: -50, y: 100 }}
+        animate={{ x: 0, y: 0 }}
+        transition={{ duration: 1.3, repeat: Infinity, repeatType: 'reverse' }}
       ></FirstCircle>
       <SecondCircle
         initial={{ x: 100, y: 70 }}
         animate={{ x: 0, y: 0 }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
+        transition={{ duration: 1.5, repeat: Infinity, repeatType: 'reverse' }}
       ></SecondCircle>
       <ThirdCircle
         initial={{ x: -50, y: 70 }}
         animate={{ x: 0, y: 0 }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
+        transition={{ duration: 1.5, repeat: Infinity, repeatType: 'reverse' }}
       ></ThirdCircle>
     </>
   );
@@ -38,7 +26,7 @@ export default function CircleMotion() {
 const FirstCircle = styled(motion.div)`
   position: absolute;
   top: -15%;
-  left: 6%;
+  left: -1%;
   width: 43.75rem;
   height: 43.75rem;
   background-color: ${({ theme }) => theme.color100};

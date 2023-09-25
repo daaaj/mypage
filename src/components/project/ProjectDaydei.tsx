@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import Carousel from './Carousel';
+import { sizes } from 'style/Media';
 import { ImgListType } from 'type/Type';
 import { HiOutlineLink } from 'react-icons/hi';
 import PostModify from 'assets/project/daydei/postModify.png';
@@ -29,6 +31,7 @@ export default function ProjectDaydei() {
   ];
 
   const navigate = useNavigate();
+  const tablet = useMediaQuery({ maxWidth: sizes.tablet });
 
   return (
     <>
@@ -42,29 +45,43 @@ export default function ProjectDaydei() {
           </TitleBox>
           <p>친구 또는 나와 같은 관심사를 가지고 있는 사용자와 일정과 정보를 공유할 수 있는 소셜 미디어 연계형 캘린더 서비스</p>
         </DescriptionContainer>
-        <Carousel imgList={imgList} alt="daydei img" />
+        {tablet ? <MobileImg src={DaydeiColor} alt="dayday img" /> : <Carousel imgList={imgList} alt="daydei img" />}
       </ProjectDaydeiWrapper>
     </>
   );
 }
 
-const ProjectDaydeiWrapper = styled.section`
+export const ProjectDaydeiWrapper = styled.section`
   ${({ theme }) => theme.FlexCol};
   padding-top: 9.375rem;
 `;
 
-const DescriptionContainer = styled.div`
+export const DescriptionContainer = styled.div`
   ${({ theme }) => theme.FlexCol};
   gap: 1.25rem;
   margin-bottom: 0.625rem;
   font-size: ${({ theme }) => theme.FontSize.large};
+
+  ${({ theme }) => theme.media.desktop`
+      font-size: 1.375rem;
+      line-height: 2rem;
+  `}
+
+  ${({ theme }) => theme.media.tablet`
+      font-size: 1.25rem;
+  `}
+
+  ${({ theme }) => theme.media.mobile`
+      font-size: 1.125rem;
+      gap: 0.625rem;
+  `}
 `;
 
-const TitleBox = styled.div`
-  display: flex;
-  align-items: center;
-
+export const TitleBox = styled.div`
   > h2 {
+    display: flex;
+    align-items: center;
+
     &:hover {
       cursor: pointer;
       color: ${({ theme }) => theme.textHover};
@@ -73,10 +90,28 @@ const TitleBox = styled.div`
     > span {
       width: auto;
       font-size: ${({ theme }) => theme.FontSize.title};
+
+      ${({ theme }) => theme.media.desktop`
+          font-size: 2.375rem;
+      `}
+
+      ${({ theme }) => theme.media.tablet`
+          font-size: 2rem;
+      `}
+
+      ${({ theme }) => theme.media.mobile`
+          font-size: 1.75rem;
+      `}
     }
   }
 `;
 
-const LinkIcon = styled(HiOutlineLink)`
+export const LinkIcon = styled(HiOutlineLink)`
   margin-right: 0.875rem;
+`;
+
+export const MobileImg = styled.img`
+  width: 100%;
+  border-radius: 1.25rem;
+  border: 3px solid ${({ theme }) => theme.textColor};
 `;

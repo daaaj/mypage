@@ -9,11 +9,16 @@ const { persistAtom: darkPersist } = recoilPersist({
 
 export const isDarkAtom = atom<boolean>({
   key: `darkMode`,
-  default: localStorage.getItem(`darkMode`) === 'true' ? true : false,
+  default: localStorage.getItem(`darkMode`) === 'true' ? false : true,
   effects_UNSTABLE: [darkPersist],
 });
 
 export const isShowTopBtniAtom = atom<boolean>({
+  key: `state${v4()}`,
+  default: false,
+});
+
+export const isShowSidebariAtom = atom<boolean>({
   key: `state${v4()}`,
   default: false,
 });
