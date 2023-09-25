@@ -4,17 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Sidebar from './Sidebar';
 import { sizes } from 'style/Media';
-import useMoveScroll from 'hooks/useMoveScroll';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { isShowSidebariAtom } from 'store/atoms';
+import useScrollToElem from 'hooks/useScrollToElem';
 import DarkModeToggle from 'components/DarkModeToggle';
 
 export default function Header() {
   const navigate = useNavigate();
-  const onMoveToElement = useMoveScroll();
+  const onScrollToElement = useScrollToElem();
   const setIsShow = useSetRecoilState(isShowSidebariAtom);
 
   const laptop = useMediaQuery({ maxWidth: sizes.laptop });
+
   return (
     <>
       <HeaderWrapper>
@@ -28,9 +29,9 @@ export default function Header() {
             <>
               <h2 onClick={() => navigate('/')}>JEONG.</h2>
               <NavListBox>
-                <li onClick={() => onMoveToElement('profile')}>PROFILE</li>
-                <li onClick={() => onMoveToElement('skills')}>SKILLS</li>
-                <li onClick={() => onMoveToElement('project')}>PROJECT</li>
+                <li onClick={() => onScrollToElement('profile')}>PROFILE</li>
+                <li onClick={() => onScrollToElement('skills')}>SKILLS</li>
+                <li onClick={() => onScrollToElement('project')}>PROJECT</li>
                 <li>
                   <DarkModeToggle />
                 </li>

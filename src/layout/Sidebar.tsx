@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
 import { useEffect, useRef } from 'react';
-import { isShowSidebariAtom } from 'store/atoms';
+import { useMediaQuery } from 'react-responsive';
 import { motion, AnimatePresence } from 'framer-motion';
-import useMoveScroll from 'hooks/useMoveScroll';
+import { sizes } from 'style/Media';
+import useScrollToElem from 'hooks/useScrollToElem';
+import { isShowSidebariAtom } from 'store/atoms';
 import { RxDoubleArrowLeft } from 'react-icons/rx';
 
 export default function Sidebar() {
   const [isShow, setIsShow] = useRecoilState(isShowSidebariAtom);
-  const onMoveToElement = useMoveScroll();
   const outside = useRef(null);
+  const onScrollToElement = useScrollToElem();
+  const laptop = useMediaQuery({ maxWidth: sizes.laptop });
 
   const backdropVariants = {
     visible: { opacity: 1 },
@@ -34,7 +37,11 @@ export default function Sidebar() {
     } else {
       document.body.style.overflow = 'auto';
     }
-  }, [isShow]);
+
+    if (!laptop) {
+      setIsShow(false);
+    }
+  }, [isShow, laptop]);
 
   return (
     <>
@@ -49,7 +56,7 @@ export default function Sidebar() {
                 <NavListBox>
                   <li
                     onClick={() => {
-                      onMoveToElement('profile');
+                      onScrollToElement('profile');
                       setIsShow(false);
                     }}
                   >
@@ -57,7 +64,7 @@ export default function Sidebar() {
                   </li>
                   <li
                     onClick={() => {
-                      onMoveToElement('skills');
+                      onScrollToElement('skills');
                       setIsShow(false);
                     }}
                   >
@@ -65,7 +72,7 @@ export default function Sidebar() {
                   </li>
                   <li
                     onClick={() => {
-                      onMoveToElement('project');
+                      onScrollToElement('project');
                       setIsShow(false);
                     }}
                   >

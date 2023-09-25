@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 
-export default function useMoveScroll() {
+export default function useScrollToElem() {
   const navigate = useNavigate();
 
-  const onMoveToElement = (id: string) => {
+  const onScrollToElement = (id: string) => {
     navigate('/');
 
     setTimeout(() => {
@@ -12,5 +12,5 @@ export default function useMoveScroll() {
     }, 0);
   };
 
-  return onMoveToElement;
+  return onScrollToElement;
 }
