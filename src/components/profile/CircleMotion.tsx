@@ -33,11 +33,11 @@ const FirstCircle = styled(motion.div)`
   opacity: 0.8;
   border-radius: 48%;
 
-  ${({ theme }) => theme.media.laptop`
+  ${({ theme }) => theme.media.desktop`
       top: -20%;
       left: -5%;
-      width: 550px;
-      height: 550px;
+      width: 34.375rem;
+      height: 34.375rem;
   `}
 `;
 
@@ -48,9 +48,9 @@ const SecondCircle = styled(FirstCircle)`
   height: 31.25rem;
   background-color: ${({ theme }) => theme.color200};
 
-  ${({ theme }) => theme.media.laptop`
-      width: 400px;
-      height: 400px;
+  ${({ theme }) => theme.media.desktop`
+      width: 25rem;
+      height: 25rem;
   `}
 `;
 
@@ -61,8 +61,8 @@ const ThirdCircle = styled(FirstCircle)`
   height: 18.75rem;
   background-color: ${({ theme }) => theme.color300};
 
-  ${({ theme }) => theme.media.laptop`
-      width: 250px;
-      height: 250px;
+  ${({ theme }) => theme.media.desktop`
+      width: 15.625rem;
+      height: 15.625rem;
   `}
 `;

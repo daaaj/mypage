@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 type ModalProps = {
   isOpen: boolean;
@@ -38,38 +38,31 @@ export default function Modal({ children, ...props }: ModalProps) {
 
   return (
     <>
-      {props.isOpen && (
-        <ModalWrapper ref={outside} onClick={outsideClickHandler} variants={backdropVariants} initial="hidden" animate="visible" exit="hidden">
-          <ModalContainer variants={modalVariants} initial="hidden" animate={'visible'} exit={'exit'}>
-            <ModalContent>{children}</ModalContent>
-          </ModalContainer>
-        </ModalWrapper>
-      )}
+      <AnimatePresence>
+        {props.isOpen && (
+          <ModalWrapper ref={outside} onClick={outsideClickHandler} variants={backdropVariants} initial="hidden" animate="visible" exit="hidden">
+            <ModalContainer variants={modalVariants} initial="hidden" animate={'visible'} exit={'exit'}>
+              <ModalContent>{children}</ModalContent>
+            </ModalContainer>
+          </ModalWrapper>
+        )}
+      </AnimatePresence>
     </>
   );
 }
 
 const ModalWrapper = styled(motion.div)`
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 900;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.747);
+  ${({ theme }) => theme.BackgroundStyle}
 `;
 
 const ModalContainer = styled(motion.div)`
   z-index: 900;
   background-color: ${({ theme }) => theme.bgModal};
-  border-radius: 20px;
+  border-radius: 1.25rem;
   width: 90%;
   height: 90%;
   overflow: hidden;
-  box-shadow: 0rem 0px 30px 5px #ffffff1d;
+  box-shadow: 0rem 0rem 1.875rem 0.3125rem #ffffff1d;
 `;
 
 const ModalContent = styled.div`

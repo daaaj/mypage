@@ -17,3 +17,8 @@ export const isShowTopBtniAtom = atom<boolean>({
   key: `state${v4()}`,
   default: false,
 });
+
+export const isShowSidebariAtom = atom<boolean>({
+  key: `state${v4()}`,
+  default: false,
+});

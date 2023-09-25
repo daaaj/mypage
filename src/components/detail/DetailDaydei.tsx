@@ -1,103 +1,93 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import DaydeiColor from "assets/project/daydei/daydei-color.png";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import DaydeiColor from 'assets/project/daydei/daydei-color.png';
 
 export default function DetailDaydei() {
   return (
-    <DaydeiWrapper>
-      <DaydeiTitleBox>
+    <DetailWrapper>
+      <DetailTitleBox>
         <h2>DAYDEI 데이데이 [ 기여도 60% ]</h2>
-      </DaydeiTitleBox>
-      <DaydeiDescWrapper>
-        <DaydeiThumbnail>
+      </DetailTitleBox>
+      <DetailDescWrapper>
+        <DetailThumbnail>
           <img src={DaydeiColor} alt="daydei thumbnail" />
-        </DaydeiThumbnail>
-        <DaydeiTitleDescBox>
+        </DetailThumbnail>
+        <DetailTitleDescBox>
           <p>친구 또는 나와 같은 관심사를 가지고 있는 사용자와 일정과 정보를 공유할 수 있는 소셜 미디어 연계형 캘린더 서비스입니다.</p>
-        </DaydeiTitleDescBox>
-        <DaydeiTableBox>
-          <tbody>
-            <tr>
-              <td>
-                <TableTitle>프로젝트 기간</TableTitle>
-              </td>
-              <td>`23.03.10 ~ `23.04.21 (6주)</td>
-            </tr>
-            <tr>
-              <td>
-                <TableTitle>팀 구성</TableTitle>
-              </td>
-              <td>
-                프론트엔드 2명, 백엔드3명, 디자이너 1명 | <span>프론트엔드 리더</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <TableTitle>사용 기술</TableTitle>
-              </td>
-              <td>React, Redux, Redux Tookit, Styled-Components, SSE, Crypto-js, Github-Action</td>
-            </tr>
-            <tr>
-              <td>
-                <TableTitle>담당 역할</TableTitle>
-              </td>
-              <td>
-                <ul>
-                  <li>
-                    <LinkText to="https://daaaj.tistory.com/54" target="_blank">
-                      유저 피드백 반영하여 서비스 성능 개선(70% 반영 완료) ↗
-                    </LinkText>
-                  </li>
-                  <li>웹 반응형</li>
-                  <li>SSE를 활용한 실시간 알림 구현</li>
-                  <li>소셜 로그인 및 kakao 친구 목록 불러오기</li>
-                  <li>
-                    <LinkText to="https://daaaj.tistory.com/52" target="_blank">
-                      Cypto-js 사용하여 로컬스토리지 암호화 ↗
-                    </LinkText>
-                  </li>
-                  <li>
-                    <LinkText to="https://daaaj.tistory.com/50" target="_blank">
-                      Github-Action 활용하여 CI/CD 구축 ↗
-                    </LinkText>
-                  </li>
-                  <li>메인 캘린더, 일정 CRUD, 이미지 CRUD</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <TableTitle>홈페이지</TableTitle>
-              </td>
-              <td>
-                <LinkSiteText to="https://www.daydei.life" target="_blank">
-                  www.daydei.life
-                </LinkSiteText>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <TableTitle>깃허브</TableTitle>
-              </td>
-              <td>
-                <LinkSiteText to="https://github.com/DAYdeiProject/DAYdei_FE" target="_blank">
-                  @github/daydei
-                </LinkSiteText>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <TableTitle>노션</TableTitle>
-              </td>
-              <td>
-                <LinkSiteText to="https://www.notion.so/A-4-SA-daydei-ae22a288543d455c810012fd6ac9b3a0" target="_blank">
-                  @notion/daydei
-                </LinkSiteText>
-              </td>
-            </tr>
-          </tbody>
-        </DaydeiTableBox>
-        <DaydeiDescBox>
+        </DetailTitleDescBox>
+        <DetailiTableBox>
+          <TableBox>
+            <div>
+              <TableTitle>프로젝트 기간</TableTitle>
+            </div>
+            <p>`23.03.10 ~ `23.04.21 (6주)</p>
+          </TableBox>
+          <TableBox>
+            <div>
+              <TableTitle>팀 구성</TableTitle>
+            </div>
+            <p>
+              프론트엔드 2명, 백엔드3명, 디자이너 1명 | <span>프론트엔드 리더</span>
+            </p>
+          </TableBox>
+          <TableBox>
+            <div>
+              <TableTitle>사용 기술</TableTitle>
+            </div>
+            <p>React, Redux, Redux Tookit, Styled-Components, SSE, Crypto-js, Github-Action</p>
+          </TableBox>
+          <TableBox>
+            <div>
+              <TableTitle>담당 역할</TableTitle>
+            </div>
+            <ul>
+              <li>
+                <LinkText to="https://daaaj.tistory.com/54" target="_blank">
+                  유저 피드백 반영하여 서비스 성능 개선(70% 반영 완료) ↗
+                </LinkText>
+              </li>
+              <li>웹 반응형</li>
+              <li>SSE를 활용한 실시간 알림 구현</li>
+              <li>소셜 로그인 및 kakao 친구 목록 불러오기</li>
+              <li>
+                <LinkText to="https://daaaj.tistory.com/52" target="_blank">
+                  Cypto-js 사용하여 로컬스토리지 암호화 ↗
+                </LinkText>
+              </li>
+              <li>
+                <LinkText to="https://daaaj.tistory.com/50" target="_blank">
+                  Github-Action 활용하여 CI/CD 구축 ↗
+                </LinkText>
+              </li>
+              <li>메인 캘린더, 일정 CRUD, 이미지 CRUD</li>
+            </ul>
+          </TableBox>
+          <TableBox>
+            <div>
+              <TableTitle>홈페이지</TableTitle>
+            </div>
+            <LinkSiteText to="https://www.daydei.life" target="_blank">
+              www.daydei.life
+            </LinkSiteText>
+          </TableBox>
+          <TableBox>
+            <div>
+              <TableTitle>깃허브</TableTitle>
+            </div>
+            <LinkSiteText to="https://github.com/DAYdeiProject/DAYdei_FE" target="_blank">
+              @github/daydei
+            </LinkSiteText>
+          </TableBox>
+          <TableBox>
+            <div>
+              <TableTitle>노션</TableTitle>
+            </div>
+            <LinkSiteText to="https://www.notion.so/A-4-SA-daydei-ae22a288543d455c810012fd6ac9b3a0" target="_blank">
+              @notion/daydei
+            </LinkSiteText>
+          </TableBox>
+        </DetailiTableBox>
+        <DetailDescBox>
           <DescBox>
             <h4>소통의 중요성</h4>
             <p>
@@ -120,34 +110,46 @@ export default function DetailDaydei() {
               고민과 노력이 필요하다는 것을 배웠습니다.
             </p>
           </DescBox>
-        </DaydeiDescBox>
-      </DaydeiDescWrapper>
-    </DaydeiWrapper>
+        </DetailDescBox>
+      </DetailDescWrapper>
+    </DetailWrapper>
   );
 }
 
-const DaydeiWrapper = styled.div`
+export const DetailWrapper = styled.div`
   width: 100%;
   height: 100%;
 `;
 
-const DaydeiTitleBox = styled.div`
+export const DetailTitleBox = styled.div`
   ${({ theme }) => theme.FlexRow};
   ${({ theme }) => theme.FlexBetween};
   margin-top: 5rem;
 
   > h2 {
     font-size: ${({ theme }) => theme.FontSize.xLarge};
+
+    ${({ theme }) => theme.media.desktop`
+        font-size: 2rem;
+    `}
+
+    ${({ theme }) => theme.media.tablet`
+        font-size: 1.75rem;
+    `}
+
+    ${({ theme }) => theme.media.mobile`
+        font-size: 1.375rem;
+    `}
   }
 `;
 
-const DaydeiDescWrapper = styled.section`
+export const DetailDescWrapper = styled.section`
   ${({ theme }) => theme.FlexCol};
   height: 100%;
   margin-top: 1.25rem;
 `;
 
-const DaydeiThumbnail = styled.div`
+export const DetailThumbnail = styled.div`
   ${({ theme }) => theme.FlexCol};
   ${({ theme }) => theme.FlexCenter};
   width: 100%;
@@ -155,65 +157,125 @@ const DaydeiThumbnail = styled.div`
 
   > img {
     width: 60%;
+
+    ${({ theme }) => theme.media.tablet`
+        width: 100%;
+    `}
   }
 `;
 
-const DaydeiTitleDescBox = styled.div`
+export const DetailTitleDescBox = styled.div`
   margin-top: 5rem;
   margin-bottom: 2.5rem;
   font-size: ${({ theme }) => theme.FontSize.large};
   font-weight: bold;
+
+  ${({ theme }) => theme.media.desktop`
+      font-size: 1.375rem;
+      line-height: 2.1875rem;
+  `}
+
+  ${({ theme }) => theme.media.tablet`
+      margin-top: 3.125rem;
+      font-size: 1.25rem;
+  `}
+
+  ${({ theme }) => theme.media.mobile`
+      font-size: 1.125rem;
+  `}
 `;
 
-const DaydeiTableBox = styled.table`
+export const DetailiTableBox = styled.div`
+  ${({ theme }) => theme.FlexCol};
+  gap: 40px;
   font-size: ${({ theme }) => theme.FontSize.medium};
   margin-bottom: 6.25rem;
 
-  > tbody > tr {
-    line-height: 3.125rem;
+  ${({ theme }) => theme.media.desktop`
+      font-size: 1.25rem;
+  `}
 
-    > td:first-child {
-      font-weight: bold;
-    }
-    > td {
-      > span {
-        font-weight: bold;
-      }
-      > ul {
-        padding: 0;
-        line-height: 2.5rem;
-      }
-    }
+  ${({ theme }) => theme.media.tablet`
+      font-size: 1.125rem;
+  `}
+
+  ${({ theme }) => theme.media.mobile`
+      font-size: 1rem;
+  `}
+`;
+
+export const TableBox = styled.div`
+  ${({ theme }) => theme.FlexRow};
+
+  ${({ theme }) => theme.media.laptop`
+      flex-direction: column;
+      gap : 0.625rem;
+  `}
+
+  > div {
+    width: 160px;
+    font-weight: bold;
+  }
+
+  > ul {
+    padding: 0;
+    line-height: 2.5rem;
   }
 `;
 
-const TableTitle = styled.span`
+export const TableTitle = styled.span`
   padding-left: 0.75rem;
   border-left: 0.3125rem solid ${({ theme }) => theme.textColor};
 `;
 
-const DaydeiDescBox = styled.div`
+export const DetailDescBox = styled.div`
   ${({ theme }) => theme.FlexCol};
   gap: 5rem;
   margin-bottom: 15.625rem;
-  font-size: ${({ theme }) => theme.FontSize.medium};
 `;
 
-const DescBox = styled.section`
+export const DescBox = styled.section`
   ${({ theme }) => theme.FlexCol};
   gap: 1.25rem;
 
   > h4 {
     font-size: ${({ theme }) => theme.FontSize.large};
+
+    ${({ theme }) => theme.media.desktop`
+        font-size: 1.375rem;
+        line-height: 2.1875rem;
+    `}
+
+    ${({ theme }) => theme.media.tablet`
+        font-size: 1.25rem;
+    `}
+
+    ${({ theme }) => theme.media.mobile`
+        font-size: 1.125rem;
+    `}
   }
 
   > p {
     padding: 0 2.5rem 0 0.9375rem;
     line-height: 2.5rem;
+    font-size: ${({ theme }) => theme.FontSize.medium};
+
+    ${({ theme }) => theme.media.desktop`
+        font-size: 1.25rem;
+        line-height: 2rem;
+    `}
+
+    ${({ theme }) => theme.media.tablet`
+        font-size: 1.125rem;
+    `}
+
+    ${({ theme }) => theme.media.mobile`
+        font-size: 1rem;
+    `}
   }
 `;
 
-const LinkText = styled(Link)`
+export const LinkText = styled(Link)`
   font-weight: bold;
 
   &:hover {
@@ -221,7 +283,7 @@ const LinkText = styled(Link)`
   }
 `;
 
-const LinkSiteText = styled(Link)`
+export const LinkSiteText = styled(Link)`
   &:hover {
     font-weight: bold;
     color: ${({ theme }) => theme.textHover};

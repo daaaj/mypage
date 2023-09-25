@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import Carousel from './Carousel';
 import { ImgListType } from 'type/Type';
-import { DescriptionContainer, LinkIcon, ProjectDaydeiWrapper, TitleBox } from './ProjectDaydei';
+import { DescriptionContainer, LinkIcon, MobileImg, ProjectDaydeiWrapper, TitleBox } from './ProjectDaydei';
 import SkillsImg from 'assets/project/portfolio/skills.png';
 import DatailImg from 'assets/project/portfolio/detail.png';
 import ProfileImg from 'assets/project/portfolio/profile.png';
@@ -11,6 +12,7 @@ import SkillsDarkImg from 'assets/project/portfolio/skills-dark.png';
 import DatailDarkImg from 'assets/project/portfolio/detail-dark.png';
 import ProfileDarkImg from 'assets/project/portfolio/profile-dark.png';
 import ProjectDarkImg from 'assets/project/portfolio/project-dark.png';
+import { sizes } from 'style/Media';
 
 export default function ProjectPortfolio() {
   const imgList: ImgListType = [
@@ -41,6 +43,7 @@ export default function ProjectPortfolio() {
   ];
 
   const navigate = useNavigate();
+  const tablet = useMediaQuery({ maxWidth: sizes.tablet });
 
   return (
     <>
@@ -54,7 +57,7 @@ export default function ProjectPortfolio() {
           </TitleBox>
           <p>포트폴리오 용도로 제작한 웹 사이트</p>
         </DescriptionContainer>
-        <Carousel imgList={imgList} alt="portfolio img" />
+        {tablet ? <MobileImg src={ProfileImg} alt="portfolio img" /> : <Carousel imgList={imgList} alt="portfolio img" />}
       </ProjectPortfolioWrapper>
     </>
   );

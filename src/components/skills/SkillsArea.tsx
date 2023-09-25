@@ -19,25 +19,25 @@ export default function SkillsArea() {
           <h2>SKILLS</h2>
           <SkillsBoxWrapper>
             <SkillBox skill="HTML">
-              <HTML width={70} height={100} />
+              <HTMLImg />
             </SkillBox>
             <SkillBox skill="CSS">
-              <CSS width={70} height={100} />
+              <CSSImg />
             </SkillBox>
             <SkillBox skill="JAVASCRIPT">
-              <JavaScript width={80} height={100} />
+              <JavaScriptImg />
             </SkillBox>
             <SkillBox skill="TYPESCRIPT">
-              <TypeScript width={80} height={100} />
+              <TypeScriptImg />
             </SkillBox>
             <SkillBox skill="REACT">
-              <React width={80} height={100} />
+              <ReactImg />
             </SkillBox>
             <SkillBox skill="REDUX">
               <img src={Redux} alt="redux" />
             </SkillBox>
             <SkillBox skill="REACT_QUERY">
-              <ReactQuery width={90} />
+              <ReactQueryImg />
             </SkillBox>
             <SkillBox skill="RECOIL">
               <img src={Recoil} alt="recoil" />
@@ -69,8 +69,16 @@ const SkillsContainer = styled.div`
     color: #ffffff;
     font-size: ${({ theme }) => theme.FontSize.title};
 
-    ${({ theme }) => theme.media.laptop`
-        font-size: 38px;
+    ${({ theme }) => theme.media.desktop`
+        font-size: 2.375rem;
+    `}
+
+    ${({ theme }) => theme.media.tablet`
+        font-size: 2rem;
+    `}
+
+    ${({ theme }) => theme.media.mobile`
+        font-size: 1.75rem;
     `}
   }
 `;
@@ -81,8 +89,88 @@ const SkillsBoxWrapper = styled.div`
   grid-template-columns: repeat(8, 1fr);
   place-items: center;
 
-  ${({ theme }) => theme.media.laptop`
+  ${({ theme }) => theme.media.desktop`
       grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
+      gap: 1.25rem;
+  `}
+
+  ${({ theme }) => theme.media.tablet`
+      grid-template-columns: repeat(4, 1fr);
+  `}
+
+  ${({ theme }) => theme.media.mobile`
+      grid-template-columns: repeat(3, 1fr);
+  `}
+`;
+
+const HTMLImg = styled(HTML)`
+  width: 4.375rem;
+  height: 6.25rem;
+
+  ${({ theme }) => theme.media.tablet`
+      width: 3.125rem;
+  `}
+
+  ${({ theme }) => theme.media.mobile`
+      width: 2.1875rem;
+  `}
+`;
+const CSSImg = styled(CSS)`
+  width: 4.375rem;
+  height: 6.25rem;
+
+  ${({ theme }) => theme.media.tablet`
+      width: 3.125rem;
+  `}
+
+  ${({ theme }) => theme.media.mobile`
+      width: 2.1875rem;
+  `}
+`;
+const JavaScriptImg = styled(JavaScript)`
+  width: 5rem;
+  height: 6.25rem;
+
+  ${({ theme }) => theme.media.tablet`
+      width: 3.75rem;
+  `}
+
+  ${({ theme }) => theme.media.mobile`
+      width: 2.5rem;
+  `}
+`;
+const TypeScriptImg = styled(TypeScript)`
+  width: 5rem;
+  height: 6.25rem;
+
+  ${({ theme }) => theme.media.tablet`
+      width: 3.75rem;
+  `}
+
+  ${({ theme }) => theme.media.mobile`
+      width: 2.5rem;
+  `}
+`;
+const ReactImg = styled(React)`
+  width: 5rem;
+  height: 6.25rem;
+
+  ${({ theme }) => theme.media.tablet`
+      width: 3.75rem;
+  `}
+
+  ${({ theme }) => theme.media.mobile`
+      width: 2.5rem;
+  `}
+`;
+const ReactQueryImg = styled(ReactQuery)`
+  width: 5.625rem;
+
+  ${({ theme }) => theme.media.tablet`
+      width: 4.375rem;
+  `}
+
+  ${({ theme }) => theme.media.mobile`
+      width: 2.5rem;
   `}
 `;

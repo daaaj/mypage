@@ -34,8 +34,28 @@ const SkillBoxContainer = styled(motion.div)`
   background-color: white;
   border-radius: 0.625rem;
 
+  ${({ theme }) => theme.media.tablet`
+      width: 6.25rem;
+      height: 6.875rem;
+  `}
+
+  ${({ theme }) => theme.media.mobile`
+      width: 4.375rem;
+      height: 4.375rem;
+  `}
+
   > img {
     width: 5.625rem;
     height: 5.625rem;
+
+    ${({ theme }) => theme.media.tablet`
+        width: 3.75rem;
+        height: 3.75rem;
+    `}
+
+    ${({ theme }) => theme.media.mobile`
+        width: 2.5rem;
+        height: 2.5rem;
+    `}
   }
 `;

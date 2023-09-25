@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
-import { isShowTopBtniAtom } from 'store/atoms';
 import { HiArrowUp } from 'react-icons/hi';
+import { isShowTopBtniAtom } from 'store/atoms';
 
 export default function TopButton() {
   const [isShow, setIsShow] = useRecoilState(isShowTopBtniAtom);
@@ -47,16 +47,34 @@ const TopBtnBox = styled.div`
   right: 6.25rem;
   ${({ theme }) => theme.FlexCol};
   ${({ theme }) => theme.FlexCenter};
-  width: 4.375rem;
-  height: 4.375rem;
+  width: 3.75rem;
+  height: 3.75rem;
   border-radius: 1.25rem;
-  box-shadow: 0px 0px 10px 2px #acacac79;
-  background-color: ${({ theme }) => theme.bgColor};
-  color: ${({ theme }) => theme.textColor};
+  box-shadow: 0rem 0rem 0.625rem 0.125rem #acacac79;
+  background-color: white;
   cursor: pointer;
+
+  ${({ theme }) => theme.media.desktop`
+      right: 3.125rem;
+      width: 2.5rem;
+      height: 2.5rem;
+  `}
+
+  ${({ theme }) => theme.media.tablet`
+      right: 1.875rem;
+      width: 1.875rem;
+      height: 1.875rem;
+  `}
 `;
 
 const TopBtnIcon = styled(HiArrowUp)`
   font-size: 1.75rem;
-  color: ${({ theme }) => theme.textColor};
+
+  ${({ theme }) => theme.media.desktop`
+      font-size: 1.25rem;
+  `}
+
+  ${({ theme }) => theme.media.tablet`
+      font-size: 1.125rem;
+  `}
 `;

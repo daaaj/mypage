@@ -18,17 +18,24 @@ export default function Carousel({ ...props }: CrouselType) {
   const [carouselTransition, setCarouselTransition] = useState('transform 500ms ease-in-out');
   const slideRef = useRef<HTMLDivElement>(null);
 
-  const maxWidth = useMediaQuery({ maxWidth: sizes.laptop });
+  const desktop = useMediaQuery({ maxWidth: sizes.desktop });
+  const laptop = useMediaQuery({ maxWidth: sizes.laptop });
 
   useEffect(() => {
-    if (maxWidth) {
+    if (desktop) {
       setImgWidth(800);
       setimgHeight(500);
-    } else {
+    }
+    if (laptop) {
+      setImgWidth(600);
+      setimgHeight(400);
+    }
+
+    if (!desktop && !laptop) {
       setImgWidth(1200);
       setimgHeight(600);
     }
-  }, [maxWidth]);
+  }, [desktop, laptop]);
 
   const makeNewImgList = (arr: ImgListType) => {
     const dataStart = arr[0];
@@ -109,7 +116,6 @@ export default function Carousel({ ...props }: CrouselType) {
 const CarouselWrapper = styled.section`
   ${({ theme }) => theme.FlexRow};
   ${({ theme }) => theme.FlexCenter};
-  gap: 0.9375rem;
   position: relative;
 `;
 

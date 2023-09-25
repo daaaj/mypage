@@ -4,12 +4,12 @@ import CircleMotion from './CircleMotion';
 import { useMediaQuery } from 'react-responsive';
 
 export default function ProfileArea() {
-  const tablet = useMediaQuery({ maxWidth: sizes.tablet });
+  const laptop = useMediaQuery({ maxWidth: sizes.laptop });
 
   return (
     <>
       <ProfileWrapper id="profile">
-        {!tablet && <CircleMotion />}
+        {!laptop && <CircleMotion />}
         <ProfileContainer>
           <ProfileInfoBox>
             <Title>
@@ -54,8 +54,8 @@ const ProfileInfoBox = styled.div`
     ${({ theme }) => theme.FlexCol};
   }
 
-  ${({ theme }) => theme.media.laptop`
-      padding : 0 40px;
+  ${({ theme }) => theme.media.desktop`
+      padding : 0 2.5rem;
   `}
 `;
 
@@ -68,9 +68,19 @@ const Title = styled.h1`
   color: #ffffff;
   line-height: 7.5rem;
 
-  ${({ theme }) => theme.media.laptop`
-      font-size: 80px;
-      line-height: 90px;
+  ${({ theme }) => theme.media.desktop`
+      font-size: 5rem;
+      line-height: 5.625rem;
+  `}
+
+  ${({ theme }) => theme.media.tablet`
+      font-size: 3.75rem;
+      line-height: 5rem;
+  `}
+
+   ${({ theme }) => theme.media.mobile`
+      font-size: 2.5rem;
+      line-height: 3.125rem;
   `}
 `;
 
@@ -78,9 +88,19 @@ const IntroContents = styled.p`
   font-size: ${({ theme }) => theme.FontSize.large};
   line-height: 2.8125rem;
 
-  ${({ theme }) => theme.media.laptop`
-      font-size: 20px;
-      line-height: 40px;
+  ${({ theme }) => theme.media.desktop`
+      font-size: 1.25rem;
+      line-height: 2.5rem;
+  `}
+
+  ${({ theme }) => theme.media.tablet`
+      font-size: 1.125rem;
+      line-height: 1.875rem;
+  `}
+
+  ${({ theme }) => theme.media.mobile`
+      font-size: 1rem;
+      line-height: 1.875rem;
   `}
 `;
 
