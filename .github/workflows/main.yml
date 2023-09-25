@@ -25,8 +25,9 @@ jobs:
       - name: Generate Environment Variables File for Production
         run: |
           echo "GENERATE_SOURCEMAP=$GENERATE_SOURCEMAP" >> .env.production
+          echo "REACT_APP_GA_TRACKING_ID=$REACT_APP_GA_TRACKING_ID" >> .env.production
         env:
-          GENERATE_SOURCEMAP: ${{ secrets.GENERATE_SOURCEMAP }}
+          REACT_APP_GA_TRACKING_ID: ${{ secrets.REACT_APP_GA_TRACKING_ID }}
         
       - name: Install Dependencies
         run: yarn
